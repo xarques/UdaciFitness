@@ -6,7 +6,7 @@ const UdaciSlider = () => {
     <View>
       <Text>UdaciSlider</Text>
     </View>
-  )
+  );
 };
 
 export default UdaciSlider;

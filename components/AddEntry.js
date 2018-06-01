@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { getMetricMetaInfo, timeToString } from "../utils/helpers";
 import UdaciSlider from "./UdaciSlider";
-import UdaciStepper from "./UdaciStepper";
+import UdaciSteppers from "./UdaciSteppers";
 import DateHeader from "./DateHeader";
 
 const SubmitButton = ({onPress}) => (
@@ -41,7 +41,7 @@ export default class AddEntry extends Component {
 
       return {
         ...state,
-        [metric]: count < max ? 0 : count
+        [metric]: count < 0 ? 0 : count
       }
     });
   }
@@ -87,7 +87,7 @@ export default class AddEntry extends Component {
                     onChange={value => this.slider(key, value)}
                     {...rest}
                   />
-                  : <UdaciStepper
+                  : <UdaciSteppers
                     value={value}
                     onIncrement={() => this.increment(key)}
                     onDecrement={() => this.decrement(key)}

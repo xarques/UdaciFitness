@@ -13,7 +13,7 @@ import { white, purple } from '../utils/colors';
 
 const SubmitButton = ({onPress}) => (
   <TouchableOpacity
-    style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.androidSubmitButton }
+    style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.androidSubmitBtn }
     onPress={onPress}
     >
     <Text style={styles.submitBtnTxt}>Submit</Text>

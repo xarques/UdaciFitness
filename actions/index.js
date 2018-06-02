@@ -1,5 +1,5 @@
 export const RECEIVE_ENTRIES = "RECEIVE_ENTRIES";
-export const ADD_ENTRY = 'ADD_ENTRY'
+export const ADD_ENTRY = 'ADD_ENTRY';
 
 export const receiveEntries = entries => (
   {
@@ -10,7 +10,7 @@ export const receiveEntries = entries => (
 
 export const addEntry = entry => (
   {
-    type: addEntry,
+    type: ADD_ENTRY,
     entry
   }
 )

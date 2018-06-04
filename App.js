@@ -5,14 +5,19 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers";
 import History from "./components/History";
-import { createBottomTabNavigator, createMaterialTopTabNavigator } from "react-navigation";
+import {
+  createBottomTabNavigator,
+  createMaterialTopTabNavigator,
+  createStackNavigator
+} from "react-navigation";
 import { purple, white } from './utils/colors';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Constants } from 'expo';
+import EntryDetail from './components/EntryDetail';
 
 const UdacityStatusBar = ({ backgroundColor, ...props}) => (
   <View style={{backgroundColor, height: Constants.statusBarHeight}}>
-    <StatusBar translucent backgrondColor={backgroundColor} {...props}/>
+    <StatusBar translucent backgroundColor={backgroundColor} {...props}/>
   </View>
 )
 
@@ -63,6 +68,21 @@ const Tabs =
       })
     : createMaterialTopTabNavigator(tabsStructure, { tabBarOptions });
 
+
+const MainNavigator = createStackNavigator({
+  Home: {
+    screen: Tabs,
+  },
+  EntryDetail: {
+    screen: EntryDetail,
+    navigationOptions: {
+      headerTintColor: white,
+      headerStyle: {
+        backgroundColor: purple
+      }
+    }
+  }
+})
 export default class App extends React.Component {
   render() {
     return (
@@ -70,7 +90,7 @@ export default class App extends React.Component {
         <View style={{flex: 1}}>
           <View syle={{height: 20}}/>
             <UdacityStatusBar backgroundColor={purple} barStyle='light-content'/>
-            <Tabs />
+            <MainNavigator />
         </View>
       </Provider>
     );

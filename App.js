@@ -14,6 +14,7 @@ import { purple, white } from './utils/colors';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Constants } from 'expo';
 import EntryDetail from './components/EntryDetail';
+import Live from './components/Live';
 
 const UdacityStatusBar = ({ backgroundColor, ...props}) => (
   <View style={{backgroundColor, height: Constants.statusBarHeight}}>
@@ -39,8 +40,17 @@ const tabsStructure = {
         <Ionicons name="plus-square" size={30} color={tintColor} />
       )
     }
+  },
+  Live: {
+    screen: Live,
+    navigationOptions: {
+      tabBarLabel: "Live",
+      tabBarIcon: ({ tintColor }) => (
+        <Ionicons name="ios-speedometer" size={30} color={tintColor} />
+      )
+    }
   }
-}
+};
 
 const tabBarOptions = {
   activeTintColor: Platform.OS === "ios" ? purple : white,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { View, Platform, StatusBar } from "react-native";
 import AddEntry from "./components/AddEntry";
 import { createStore } from "redux";
@@ -37,7 +37,7 @@ const tabsStructure = {
     navigationOptions: {
       tabBarLabel: "Add Entry",
       tabBarIcon: ({ tintColor }) => (
-        <Ionicons name="plus-square" size={30} color={tintColor} />
+        <Ionicons name="ios-add" size={30} color={tintColor} />
       )
     }
   },
@@ -93,7 +93,7 @@ const MainNavigator = createStackNavigator({
     }
   }
 })
-export default class App extends React.Component {
+export default class App extends Component {
   render() {
     return (
       <Provider store={createStore(reducer)}>

@@ -55,9 +55,10 @@ class AddEntry extends Component {
   }
 
   slider = (metric, value) => {
-    this.setState(() => ({
-      [metric] : value
-    }))
+    // this.setState(() => ({
+    //   [metric]: value
+    // }))
+    this.setState({[metric]: value});
   }
 
   submit = () => {
@@ -68,13 +69,13 @@ class AddEntry extends Component {
       [key]: entry
     }))
 
-    this.setState(() => ({
+    this.setState({
       run: 0,
       bike: 0,
       swim: 0,
       sleep: 0,
       eat: 0
-    }))
+    });
 
     this.toHome();
 
@@ -187,7 +188,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 30,
-    mrginLeft: 30
+    marginLeft: 30
   }
 });
 

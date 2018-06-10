@@ -13,5 +13,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'purple'
   }
-})
+});
+
 export default TextButton;

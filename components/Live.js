@@ -27,11 +27,11 @@ export default class Live extends Component {
           return this.setLocation()
         }
 
-        this.setStatus(() => ({ status }))
+        this.setStatus({ status });
       })
       .catch((error) => {
         console.warn('Error getting Location permission: ', error);
-        this.setState(() => ({ status: 'undetermined' }))
+        this.setState({ status: 'undetermined' })
       })
   }
 
@@ -42,11 +42,11 @@ export default class Live extends Component {
           return this.setLocation()
         }
 
-        this.setStatus(() => ({ status }));
+        this.setStatus({ status });
       })
       .catch((error) => {
         console.warn('Error asking Location permission: ', error);
-        // this.setState(() => ({ status: 'undetermined' }))
+        // this.setState({ status: 'undetermined' });
       })
   }
 
@@ -64,11 +64,11 @@ export default class Live extends Component {
           Animated.spring(bounceValue, { toValue: 1, friction: 4 })
         ]).start()
       }
-      this.setState(() => ({
+      this.setState({
         coords,
         status: 'granted',
         direction: newDirection
-      }))
+      });
     })
   }
 

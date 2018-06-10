@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 12
   }
-})
+});
 
 export default MetricInfo;
